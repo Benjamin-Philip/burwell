@@ -1,0 +1,8 @@
+baseURL = "https://benjamin-philip.github.io/burwell"
+languageCode = 'en-us'
+title = 'Burwell'
+theme = 'burwell'
+
+[params]
+    author = "Benjamin Philip"
+    description = "A theme inspired by (@benburwell) Ben Burwell's Personal Website."
