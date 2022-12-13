@@ -1,7 +1,7 @@
 baseURL = "https://benjamin-philip.github.io/burwell"
 languageCode = 'en-us'
 title = 'Burwell'
-theme = 'burwell'
+theme = 'github.com/Benjamin-Philip/burwell'
 
 [params]
     author = "Benjamin Philip"

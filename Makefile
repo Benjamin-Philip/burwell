@@ -11,4 +11,8 @@ default:
 clean:
 	$(MAKE) -C exampleSite clean
 
+.PHONY: server
+server:
+	$(MAKE) -C exampleSite server
+
 # end

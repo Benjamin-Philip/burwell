@@ -1,3 +1,4 @@
 .hugo_build.lock
-**/resources
-**/public
+.resources
+public
+_vendor
