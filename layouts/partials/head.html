@@ -1,0 +1,64 @@
+<head>
+  <title>{{ .Title }}</title>
+
+  {{ $description := (default .Site.Params.description .Description) }}
+  {{ $thumbnail := (default .Site.Params.thumbnail .Params.image) }}
+  {{ $author := (default .Site.Author .Params.author) }}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="author" content="{{ .Site.Author }}">
+  <meta name="description" content="{{ $description }}">
+
+  <!-- Basic Open Graph Metadata -->
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="{{ $thumbnail }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+
+  <!-- Optional Open Graph Metadata -->
+  <meta property="og:description" content="{{ $description }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+
+    <!-- Open Graph Article Object Type Metadata -->
+  {{ if eq .Kind "page" }}
+  <meta property="article:author" content="{{ .Site.Author }}">
+  <meta property="article:published_time" content="{{ .PublishDate }}">
+  <meta property="article:modified_time" content="{{ .Lastmod }}">
+  <meta property="article:expiration_time" content="{{ .ExpiryDate }}">
+  {{ end }}
+
+  <!-- link rel  -->
+  <link rel="alternate" type="application/atom+xml" title="{{ .Site.Title }} posts" href="/feed.xml">
+  <link rel="author" href="{{ $author }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" href="{{ $thumbnail }}">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="stylesheet" type="text/css" href="/assets/css/site.css">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- KaTeX support -->
+  {{ if (and (eq .Kind "page") (default false .Params.maths)) }}
+      {{ $katexVer := (default .Site.Params.katex_version "latest") }}
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@{{ $katexVer }}/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@{{ $katexVer }}/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@{{ $katexVer }}/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                // • rendering keys, e.g.:
+                throwOnError : false
+            });
+        });
+      </script>>
+  {{ end }}
+</head>
