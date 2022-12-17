@@ -46,9 +46,7 @@ jobs:
         id: cache-hugo-mods
         uses: actions/cache@v3
         with:
-          path: |
-            ~/.cache/go-build
-            ~/go/pkg/mod
+          path: exampleSite/_vendor
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
           restore-keys:
             ${{ runner.os }}-go-
