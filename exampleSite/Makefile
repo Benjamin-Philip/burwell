@@ -8,11 +8,8 @@ HUGOFLAGS = --gc --minify
 
 default: public
 
-public: config.toml content _vendor
+public: config.toml content go.mod
 	hugo $(HUGOFLAGS)
-
-_vendor: go.mod
-	hugo mod vendor
 
 .PHONY: clean
 clean:
