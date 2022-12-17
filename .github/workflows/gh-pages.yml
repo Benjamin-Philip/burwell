@@ -40,7 +40,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-          # extended: true
+          extended: true
 
       - name: Cache Hugo modules for exampleSite
         id: cache-hugo-mods
