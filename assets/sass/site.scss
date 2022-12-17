@@ -1,0 +1,174 @@
+@import 'base16-styles/zenburn.scss';
+@import 'base16.scss';
+
+//override
+$blockquote:      #7f9f7f;
+$link:            #efdcbc;
+$link-hover:      #f8f893;
+$link-visited:    #dca3a3;
+$subject:         #aaaaaa;
+
+$mono: "DejaVu Sans Mono", "Consolas", monospace !default;
+$sans: "DejaVu Sans Book", "Calibri", sans !default;
+$maxcols: 80ch;
+
+* {
+  scrollbar-color: $scroll-fg $scroll-bg;
+}
+
+*::selection {
+  background: $region;
+}
+
+*::-webkit-scrollbar {
+  width: auto;
+}
+
+*::-webkit-scrollbar-track {
+  background: $scroll-bg;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: $scroll-fg;
+}
+
+body {
+  background-color: $background;
+  color: $foreground;
+  font-family: $mono;
+  font-size: 12px;
+  padding: 5em 0 0 0;
+  margin: 0;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+  &:visited {
+    color: $link-visited;
+  }
+  &:hover {
+    @if variable-exists(link-hover) {
+      color: $link-hover;
+    } @else {
+      background: $link-hover-bg;
+    }
+  }
+}
+
+@mixin container {
+  max-width: $maxcols;
+  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5em;
+}
+
+.home {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  pre {
+    @include container;
+    overflow: auto;
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+.container {
+  @include container;
+}
+
+.flex-justify {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.muted {
+  color: $dimmed;
+}
+
+footer {
+  @include container;
+  @extend .muted;
+  p {
+    line-height: 1.5em;
+    text-align: center;
+  }
+}
+
+time {
+  @extend .muted;
+}
+
+.p-author {
+  @extend .muted;
+}
+
+.p-author::after {
+  content: " |";
+}
+
+@mixin heading {
+  color: $subject;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid $border;
+  h2 {
+    @include heading;
+  }
+}
+
+article {
+  @include container;
+}
+
+$anchor: "#";
+@for $j from 1 through 6 {
+  main h#{$j} {
+    @include heading;
+    a::before {
+      content: $anchor;
+    }
+  }
+  $anchor: $anchor + "#";
+}
+
+p {
+  text-align: justify;
+}
+
+pre {
+  font-family: $mono;
+  overflow: auto;
+  margin: 1rem;
+}
+
+blockquote {
+  color: $blockquote;
+  font-style: italic;
+  p {
+    padding-left: 2ch;
+  }
+}
+
+code {
+  color: $code;
+}
+
+.highlight {
+  padding-left: 2ch;
+}
+
+td {
+  padding-left: 2ch;
+}

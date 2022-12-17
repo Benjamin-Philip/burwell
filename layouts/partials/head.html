@@ -34,8 +34,12 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="icon" href="{{ $thumbnail }}">
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-  <link rel="stylesheet" type="text/css" href="/assets/css/site.css">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Stylesheet -->
+  {{ $scss :=  resources.Get "sass/site.scss" }}
+  {{ $style := $scss | toCSS | minify | fingerprint  }}
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
 
   <!-- KaTeX support -->
   {{ if (and (eq .Kind "page") (default false .Params.maths)) }}
