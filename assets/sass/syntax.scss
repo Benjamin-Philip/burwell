@@ -1,0 +1,136 @@
+/* sources:
+ *   https://github.com/ttys3/base16-chroma/blob/master/chroma-base16-css/cssvar/base16-zenburn.css
+ *   https://gohugo.io/content-management/syntax-highlighting/
+ *   https://github.com/tinted-theming/base16-schemes/blob/main/zenburn.yaml
+ */
+
+$bg:         $base00;   /* Default Background */
+$bg-lighter: $base01;   /* Lighter Background (Used for status bars) */
+$bg-sel:     $base02;   /* Selection Background */
+$cmt:        $base03;   /* Comments, Invisibles, Line Highlighting */
+$fg-darker:  $base04;   /* Darker Foreground (Used for status bars) */
+$fg:         $base05;   /* Default Foreground, Caret, Delimiters, Operators */
+$fg-light:   $base06;   /* Light Foreground (Not often used) */
+$bg-light:   $base07;   /* Light Background (Not often used) */
+$var:        $base08;   /* Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted */
+$const:      $base09;   /* Integers, Boolean, Constants, XML Attributes, Markup Link Url */
+$class:      $base0A;   /* Classes, Markup Bold, Search Text Background */
+$str:        $base0B;   /* Strings, Inherited Class, Markup Code, Diff Inserted */
+$regex:      $base0C;   /* Support, Regular Expressions, Escape Characters, Markup Quotes */
+$func:       $base0D;   /* Functions, Methods, Attribute IDs, Headings */
+$kwd:        $base0E;   /* Keywords, Storage, Selector, Markup Italic, Diff Changed */
+$embd:       $base0F;   /* Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?> */
+
+
+
+/* Background */ .chroma { color: $fg; background-color: $bg }
+/* Other */ .chroma .x { color: $fg }
+/* Error */ .chroma .err { color: $var }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
+/* LineHighlight */ .chroma .hl { display: block; width: 100%; background-color: $bg-sel }
+/* LineNumbersTable */ .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em; }
+/* LineNumbers */ .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em; }
+
+/* Keyword */ .chroma .k { color: $kwd }
+/* KeywordConstant */ .chroma .kc { color: $kwd }
+/* KeywordDeclaration */ .chroma .kd { color: $kwd }
+/* KeywordNamespace */ .chroma .kn { color: $kwd }
+/* KeywordPseudo */ .chroma .kp { color: $func }
+/* KeywordReserved */ .chroma .kr { color: $kwd }
+/* KeywordType */ .chroma .kt { color: $kwd }
+
+/* Name */ .chroma .n { color: $fg }
+/* NameAttribute */ .chroma .na { color: $fg }
+/* NameBuiltin */ .chroma .nb { color: $func }
+/* NameBuiltinPseudo */ .chroma .bp { color: $func }
+/* NameClass */ .chroma .nc { color: $class }
+/* NameConstant */ .chroma .no { color: $const }
+/* NameDecorator */ .chroma .nd { color: $const }
+/* NameEntity */ .chroma .ni { color: $class }
+/* NameException */ .chroma .ne { color: $class }
+/* NameFunction */ .chroma .nf { color: $fg }
+/* NameFunctionMagic */ .chroma .fm { color: $fg }
+/* NameLabel */ .chroma .nl { color: $var }
+/* NameNamespace */ .chroma .nn { color: $class }
+/* NameOther */ .chroma .nx { color: $func }
+/* NameProperty */ .chroma .py { color: $var }
+/* NameTag */ .chroma .nt { color: $func }
+/* NameVariable */ .chroma .nv { color: $func }
+/* NameVariableClass */ .chroma .vc { color: $func }
+/* NameVariableGlobal */ .chroma .vg { color: $func }
+/* NameVariableInstance */ .chroma .vi { color: $var }
+/* NameVariableMagic */ .chroma .vm { color: $func }
+
+/* Literal */ .chroma .l { color: $str }
+/* LiteralDate */ .chroma .ld { color: $str }
+/* LiteralString */ .chroma .s { color: $str }
+/* LiteralStringAffix */ .chroma .sa { color: $str }
+/* LiteralStringBacktick */ .chroma .sb { color: $str }
+/* LiteralStringChar */ .chroma .sc { color: $str }
+/* LiteralStringDelimiter */ .chroma .dl { color: $embd }
+/* LiteralStringDoc */ .chroma .sd { color: $cmt }
+/* LiteralStringDouble */ .chroma .s2 { color: $str }
+/* LiteralStringEscape */ .chroma .se { color: $regex }
+/* LiteralStringHeredoc */ .chroma .sh { color: $str }
+/* LiteralStringInterpol */ .chroma .si { color: $embd }
+/* LiteralStringOther */ .chroma .sx { color: $str }
+/* LiteralStringRegex */ .chroma .sr { color: $regex }
+/* LiteralStringSingle */ .chroma .s1 { color: $str }
+/* LiteralStringSymbol */ .chroma .ss { color: $str }
+
+/* LiteralNumber */ .chroma .m { color: $const }
+/* LiteralNumberBin */ .chroma .mb { color: $const }
+/* LiteralNumberFloat */ .chroma .mf { color: $const }
+/* LiteralNumberHex */ .chroma .mh { color: $const }
+/* LiteralNumberInteger */ .chroma .mi { color: $const }
+/* LiteralNumberIntegerLong */ .chroma .il { color: $const }
+/* LiteralNumberOct */ .chroma .mo { color: $const }
+
+/* Operator */ .chroma .o { color: $fg }
+/* OperatorWord */ .chroma .ow { color: $fg }
+/* Punctuation */ .chroma .p { color: $fg }
+
+/* Comment */ .chroma .c { color: $cmt }
+/* CommentHashbang */ .chroma .ch { color: $cmt }
+/* CommentMultiline */ .chroma .cm { color: $cmt }
+/* CommentSingle */ .chroma .c1 { color: $cmt }
+/* CommentSpecial */ .chroma .cs { color: $cmt }
+/* CommentPreproc */ .chroma .cp { color: $embd }
+/* CommentPreprocFile */ .chroma .cpf { color: $str }
+
+/* Generic */ .chroma .g { color: $fg }
+/* GenericDeleted */ .chroma .gd { color: $var }
+/* GenericEmph */ .chroma .ge { color: $fg; font-style: italic }
+/* GenericError */ .chroma .gr { color: $fg }
+/* GenericHeading */ .chroma .gh { color: $func }
+/* GenericInserted */ .chroma .gi { color: $str }
+/* GenericOutput */ .chroma .go { color: $fg }
+/* GenericPrompt */ .chroma .gp { color: $fg }
+/* GenericStrong */ .chroma .gs { color: $fg; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: $func }
+/* GenericTraceback */ .chroma .gt { color: $fg }
+/* GenericUnderline */ .chroma .gl { color: $fg; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: $bg; text-decoration: underline }
+
+
+/* lang specific optimization */
+
+/** go **/
+
+/* function name */
+/* .chroma .language-go .nf */
+
+
+/* variable, struct name, struct attribute */
+/* .chroma .language-go .nx */
+
+
+/* builtin func like make(), make it diff from func, chroma go has no .nc */
+.chroma .language-go .nb { color: $class; }
+
+/* Operator: *, +, -, := */
+/* .chroma .language-go .o */
+
+/* Punctuation: , . () {} */
+/* .chroma .language-go .p */

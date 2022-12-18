@@ -6,3 +6,6 @@ theme = 'github.com/Benjamin-Philip/burwell'
 [params]
     author = "Benjamin Philip"
     description = "A theme inspired by (@benburwell) Ben Burwell's Personal Website."
+
+[markup.highlight]
+  noClasses = false
