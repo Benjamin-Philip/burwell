@@ -1,11 +1,11 @@
 <footer>
     <p>
-        <a rel="author" href="/">
+        <a rel="author" href="{{ relref . "/"  }}">
             {{ $baseurl:= .Site.BaseURL | urls.Parse }}
-            {{ $baseurl.Host }}
+            {{ $baseurl.Host }}{{ $baseurl.Path }}
         </a> ~
-        <a href="/posts">posts</a> ~
-        <a href="/feed.xml">rss</a>
+        <a href="{{ relref . "/posts" }}">posts</a> ~
+        <a href="{{ .Site.BaseURL }}/index.xml">rss</a>
     </p>
     <p>
         {{ $licenseLink :=  (default "https://creativecommons.org/licenses/by/4.0/" .Site.Params.license.link) }}
