@@ -4,8 +4,14 @@ title = 'Burwell'
 theme = 'github.com/Benjamin-Philip/burwell'
 
 [params]
-    author = "Benjamin Philip"
     description = "A theme inspired by (@benburwell) Ben Burwell's Personal Website."
+
+[params.license]
+  name = "CC BY 4.0"
+  link = "https://creativecommons.org/licenses/by/4.0/"
+
+[author]
+  name = "Benjamin Philip"
 
 [markup.highlight]
   noClasses = false
