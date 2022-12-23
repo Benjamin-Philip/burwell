@@ -2,8 +2,7 @@
 <footer>
     <p>
         <a rel="author" href="{{ relref . "/"  }}">
-            {{ $baseurl:= .Site.BaseURL | urls.Parse }}
-            {{ $baseurl.Host }}{{ $baseurl.Path }}
+            {{  .Site.Title }}
         </a> ~
         <a href="{{ relref . "/posts" }}">posts</a> ~
         <a href="{{ .Site.BaseURL }}/index.xml">rss</a>
