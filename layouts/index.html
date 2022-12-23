@@ -17,10 +17,20 @@
   {{ safeHTML $code }}
 </div>
 
+<div class="home p-contact contact h-card v-card" id="toml">
+  {{ $code := string (partial "homepage/homepage.toml" .) }}
+  {{ $code := $code | replaceRE `&#39;` "'"}}
+  {{ $code := $code | replaceRE "/ignore\n" "" }}
+  {{ $code := highlight $code "toml"}}
+  {{ $code := $code | replaceRE "\\[(.+)\\]\\((.*)\\)" `<a href="${2}">${1}</a>`}}
+  {{ safeHTML $code }}
+</div>
+
+
 <!-- Homepage Language Selection -->
 <script>
   function displayLang(){
-    var langs = ["json", "yaml"];
+    var langs = ["json", "yaml", "toml"];
     langs.splice(Math.floor(Math.random() * langs.length), 1);
 
     langs.forEach(
