@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body>
+    <body {{ if eq .Kind "home"}}onload="displayLang()"{{ end  }}>
         {{- partial "header.html" . -}}
         <main>
         {{- block "main" . }}{{- end }}
