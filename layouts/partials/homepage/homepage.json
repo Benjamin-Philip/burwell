@@ -1,4 +1,5 @@
 {{ $info := partial "homepage/GetInfo" . }}
+{{ $author := $info.author }}
 
 {
     "title": "{{ $info.title }}",
@@ -8,11 +9,11 @@
     "{{ $item.Name }}": "[{{ $url }}]({{ $url }})",
 {{ end }}
     "author": {
-        "name": "{{ $info.author.name }}",
-        "email": "{{ $info.author.email }}",
-        "pgp": "[{{ $info.author.pgp.id }}]({{$info.author.pgp.link}})",
+        "name": "{{ $author.name }}",
+        "email": "[{{ $author.email }}](mailto:{{ $author.email }})",
+        "pgp": "[{{ $author.pgp.id }}]({{$author.pgp.link}})",
         "socialmedia": [
-{{ range $site, $user := $info.author.socialmedia }}
+{{ range $site, $user := $author.socialmedia }}
             {"{{$site}}": "[{{$user.username}}]({{$user.link}})"},
 {{ end }}
         ]
