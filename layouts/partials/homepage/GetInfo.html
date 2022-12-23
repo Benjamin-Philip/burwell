@@ -1,0 +1,5 @@
+{{ $author := dict "author" .Site.Author }}
+{{ $siteInfo := dict "title" .Site.Title "description" .Site.Params.description }}
+{{ $menu := dict "menu" .Site.Menus }}
+
+{{ return (merge $author $siteInfo $menu) }}

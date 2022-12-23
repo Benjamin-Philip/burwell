@@ -4,14 +4,41 @@ title = 'Burwell'
 theme = 'github.com/Benjamin-Philip/burwell'
 
 [params]
-    description = "A theme inspired by (@benburwell) Ben Burwell's Personal Website."
+  description = "A theme inspired by (@benburwell) Ben Burwell's Personal Website."
 
 [params.license]
   name = "CC BY 4.0"
   link = "https://creativecommons.org/licenses/by/4.0/"
 
+[menu]
+  [[menu.main]]
+    identifier = 'about'
+    name = "About"
+    url = '/about'
+    weight = -110
+
+  [[menu.main]]
+    identifier = 'posts'
+    name = "Posts"
+    url = '/posts/'
+    weight = -100
+
+
 [author]
   name = "Benjamin Philip"
+  email = "benjamin.philip495@gmail.com"
+
+  [author.pgp]
+    id = "foo"
+    link = "https://example.com"
+
+  [author.socialmedia.github]
+    username = "@Benjamin-Philip"
+    link = "https://github.com/Benjamin-Philip"
+
+  [author.socialmedia.gitlab]
+    username = "@bphilip"
+    link = "https://gitlab.com/bphilip"
 
 [markup.highlight]
   noClasses = false

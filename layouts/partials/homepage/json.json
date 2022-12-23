@@ -1,0 +1,20 @@
+{{ $info := partial "homepage/GetInfo" . }}
+
+{
+    "title": "{{ $info.title }}",
+    "description": "{{ $info.description }}",
+{{ range $item := $info.menu.main  }}
+{{ $url := $item.ConfiguredURL }}
+    "{{ $item.Name }}": "[{{ $url }}]({{ $url }})",
+{{ end }}
+    "author": {
+        "name": "{{ $info.author.name }}",
+        "email": "{{ $info.author.email }}",
+        "pgp": "[{{ $info.author.pgp.id }}]({{$info.author.pgp.link}})",
+        "socialmedia": [
+{{ range $site, $user := $info.author.socialmedia }}
+            {"{{$site}}": "[{{$user.username}}]({{$user.link}})"},
+{{ end }}
+        ]
+    }
+}
