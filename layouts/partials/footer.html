@@ -1,8 +1,7 @@
-{{ if (not (eq .Kind "home")) }}
 <footer>
     <p>
         <a rel="author" href="{{ relref . "/"  }}">
-            {{  .Site.Title }}
+            {{ .Site.Title }}
         </a> ~
         <a href="{{ relref . "/posts" }}">posts</a> ~
         <a href="{{ .Site.BaseURL }}/index.xml">rss</a>
@@ -11,8 +10,8 @@
         {{ $licenseLink :=  (default "https://creativecommons.org/licenses/by/4.0/" .Site.Params.license.link) }}
         {{ $license :=  (default "CC BY 4.0" .Site.Params.license.name) }}
         {{ $author := (default .Site.Author.name .Params.author.name) }}
+        {{ $lastmod := .Lastmod.Format "2006" }}
 
-        &copy; {{ .Lastmod.Format "2006" }} {{ $author }} <a href="{{ $licenseLink }}">{{ $license }}</a>
+        &copy; {{ if ne $lastmod "0001" }}{{ $lastmod }}{{ else }}{{ now.Year }}{{ end }} {{ $author }} <a href="{{ $licenseLink }}">{{ $license }}</a>
     </p>
 </footer>
-{{ end }}

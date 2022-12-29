@@ -6,6 +6,8 @@
         <main>
         {{- block "main" . }}{{- end }}
         </main>
-        {{- partial "footer.html" . -}}
+        {{ if ne .Kind "home" }}
+            {{- partial "footer.html" . -}}
+        {{ end }}
     </body>
 </html>

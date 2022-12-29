@@ -1,2 +1,4 @@
+enableGitInfo = true
+
 [markup.highlight]
   noClasses = false
