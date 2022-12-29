@@ -1,0 +1,6 @@
+{{ range . }}
+    <p class="flex-justify h-entry hentry">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <time class="post-list" datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+    </p>
+{{ end }}
