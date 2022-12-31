@@ -11,6 +11,19 @@
   </div>
 </article>
 
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+  <footer>
+    <p>Read more:
+    {{ range $related }}
+      <br>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </br>
+    {{ end }}
+    </p>
+  </footer>
+{{ end }}
+
 {{ if .Site.DisqusShortname -}}
 <h2>Comments</h2>
 {{ template "_internal/disqus.html" . }}

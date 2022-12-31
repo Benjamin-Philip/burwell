@@ -2,6 +2,8 @@
 title: A Guide to Markdown
 date: 2022-12-15
 maths: true
+tags:
+  - Getting Started
 ---
 
 For those of you unfamiliar with Markdown, here's a guide to it.

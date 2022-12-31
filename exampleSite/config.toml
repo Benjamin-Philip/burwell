@@ -41,5 +41,25 @@ enableGitInfo = true
     username = "@bphilip"
     link = "https://gitlab.com/bphilip"
 
+# TODO Write articles that use these features properly
+
+[taxonomies]
+  category = 'categories'
+  series = 'series'
+  tag = 'tags'
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+
+  [[related.indices]]
+    name = 'categories'
+    weight = 100
+
+  [[related.indices]]
+    name = 'tags'
+    weight = 10
+
 [markup.highlight]
   noClasses = false
